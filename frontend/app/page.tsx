@@ -264,7 +264,47 @@ export default function Home() {
     {/* RIGHT SIDE - PDF */}
 
     <div className="col-span-8">
+        <div className="w-full max-w-7xl mt-8 mb-4">
 
+  <div className="bg-white border rounded-xl shadow p-6 flex justify-between items-center">
+
+    <div>
+      <p className="text-gray-500">
+        Total Score
+      </p>
+
+      <p className="text-3xl font-bold text-black">
+        {totalScore} / {maxScore}
+      </p>
+    </div>
+
+    <div>
+      <p className="text-gray-500">
+        Average Score
+      </p>
+
+      <p className="text-3xl font-bold text-black">
+        {averageScore}
+      </p>
+    </div>
+
+    <div>
+      <p className="text-gray-500">
+        Grade
+      </p>
+
+      <p
+        className={`text-3xl font-bold ${getGradeColor(
+          grade
+        )}`}
+      >
+        {grade}
+      </p>
+    </div>
+
+  </div>
+
+</div>
       <div className="bg-white rounded-xl border shadow p-6 min-h-[900px]">
 
         {selectedQuestion !== null ? (
@@ -301,7 +341,68 @@ export default function Home() {
               </p>
 
             </div>
+                {/* EVALUATION */}
 
+<div className="bg-white border rounded-xl p-5 mb-6 shadow-sm">
+
+  <h3 className="font-bold text-lg text-black mb-4">
+    Evaluation
+  </h3>
+
+  <div className="grid grid-cols-3 gap-4 mb-5">
+
+    <div className="bg-blue-50 border rounded-lg p-4">
+      <p className="text-sm text-gray-500">
+        Score
+      </p>
+
+      <p className="text-2xl font-bold text-blue-600">
+        {mappedAnswers[selectedQuestion]?.score ?? 0}
+      </p>
+    </div>
+
+    <div className="bg-green-50 border rounded-lg p-4">
+      <p className="text-sm text-gray-500">
+        Max Score
+      </p>
+
+      <p className="text-2xl font-bold text-green-600">
+        {mappedAnswers[selectedQuestion]?.max_score ?? 0}
+      </p>
+    </div>
+
+    <div className="bg-orange-50 border rounded-lg p-4">
+      <p className="text-sm text-gray-500">
+        Percentage
+      </p>
+
+      <p className="text-2xl font-bold text-orange-600">
+        {(
+          (
+            (mappedAnswers[selectedQuestion]?.score ?? 0) /
+            (mappedAnswers[selectedQuestion]?.max_score ?? 1)
+          ) * 100
+        ).toFixed(0)}
+        %
+      </p>
+    </div>
+
+  </div>
+
+  <div className="bg-gray-50 border rounded-lg p-4">
+
+    <p className="font-semibold text-gray-800 mb-2">
+      Feedback
+    </p>
+
+    <p className="text-gray-700 whitespace-pre-wrap">
+      {mappedAnswers[selectedQuestion]?.feedback ||
+        "No feedback available"}
+    </p>
+
+  </div>
+
+</div>
             {/* PDF AREA */}
 
             <div className="border rounded-lg overflow-hidden">
