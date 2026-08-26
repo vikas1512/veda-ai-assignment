@@ -314,7 +314,7 @@ Response:
 
 ## Author
 
-**Yuvapriya N**
+**Vikas S**
 
 GitHub: https://github.com/vikas1512
 
