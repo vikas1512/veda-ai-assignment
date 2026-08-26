@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Uploads
+backend/uploads/
+
+# Node
+node_modules/
+
+# Next.js
+.next/
+
+# Logs
+*.log
