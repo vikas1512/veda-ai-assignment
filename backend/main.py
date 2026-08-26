@@ -172,7 +172,7 @@ async def upload_files(
     ]
     answer_pdf_url = f"/uploads/{answer.filename}"
     return {
-    "mapped_answers": mapped_answers,
+    "mapped_answers": evaluated_results,
     "page_images": page_images,
     "answer_pdf_url": f"/uploads/{answer.filename}",
     "total_score": total_score,
