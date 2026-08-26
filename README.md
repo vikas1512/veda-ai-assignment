@@ -5,7 +5,7 @@ An AI-powered web application that automatically evaluates student answer sheets
 ## Live Demo
 
 ### Frontend
-[Add your Vercel URL here]
+https://veda-ai-assignment-seven.vercel.app/
 
 ### Backend API
 https://veda-ai-assignment-m87u.onrender.com
