@@ -101,7 +101,7 @@ export default function Home() {
       setStatus("Mapping answers...");
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/upload",
+        "https://veda-ai-assignment-m87u.onrender.com/upload",
         formData
       );
 
@@ -307,7 +307,7 @@ export default function Home() {
             <div className="border rounded-lg overflow-hidden">
                 
               <iframe
-                src={`http://127.0.0.1:8000${pdfUrl}`}
+                src={`https://veda-ai-assignment-m87u.onrender.com${pdfUrl}`}
                 className="w-full h-[700px]"
               />
 
