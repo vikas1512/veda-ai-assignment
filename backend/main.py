@@ -11,8 +11,10 @@ from services.answer_mapper import map_answers
 from services.evaluator import evaluate_answer
 
 import os
-
+UPLOAD_DIR = "uploads"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 app = FastAPI()
+
 app.mount(
     "/uploads",
     StaticFiles(directory="uploads"),
@@ -26,10 +28,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
-
 
 @app.get("/")
 def home():
