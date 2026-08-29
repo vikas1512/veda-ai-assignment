@@ -144,12 +144,19 @@ export default function Home() {
       setPdfUrl(
         response.data.answer_pdf_url || ""
     );
+    alert("Evaluation completed successfully!");
     } catch (error) {
-      console.error(
-        "UPLOAD ERROR:",
-        error
-      );
-    } finally {
+  console.error(
+    "UPLOAD ERROR:",
+    error
+  );
+
+  alert(
+    "Failed to process files. Please try again."
+  );
+
+  setStatus("Processing failed");
+} finally {
       setLoading(false);
       setStatus("");
     }
@@ -161,7 +168,13 @@ export default function Home() {
 
       <div className="flex-1 p-4">
         <Topbar />
+        <Topbar />
 
+<div className="flex justify-center mt-4">
+  <div className="bg-orange-100 text-orange-600 px-4 py-2 rounded-full font-semibold">
+    Veda AI - Automated Answer Evaluation System
+  </div>
+</div>
         <div className="flex flex-col items-center min-h-[80vh]">
 
           <h1 className="text-[64px] font-bold leading-tight text-center mt-8 text-black">
@@ -208,8 +221,8 @@ export default function Home() {
             `}
           >
             {loading
-              ? "Processing..."
-              : "Start Mapping →"}
+  ? "AI Evaluating Answer Sheet..."
+  : "Start Mapping →"}
           </button>
 
           {loading && (
@@ -232,6 +245,9 @@ export default function Home() {
       <div className="sticky top-0 bg-white border-b p-4">
         <h2 className="text-xl font-bold text-black">
           Questions
+          <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-medium">
+    {mappedAnswers.length}
+  </span>
         </h2>
       </div>
 
@@ -427,7 +443,15 @@ export default function Home() {
   </div>
 )}
           
+    <footer className="w-full mt-20 py-8 text-center">
+  <p className="text-gray-500 text-sm">
+    Powered by Gemini AI
+  </p>
 
+  <p className="text-xs text-gray-400 mt-1">
+    Built with Next.js • FastAPI • Render • Vercel
+  </p>
+</footer>
         </div>
       </div>
     </main>
