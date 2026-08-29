@@ -169,8 +169,6 @@ export default function Home() {
       <div className="flex-1 p-4">
         <Topbar />
       
-
-
         <div className="flex flex-col items-center min-h-[80vh]">
 
           <h1 className="text-[64px] font-bold leading-tight text-center mt-8 text-black">
