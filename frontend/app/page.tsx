@@ -173,7 +173,7 @@ export default function Home() {
     Veda AI - Automated Answer Evaluation System
   </div>
 </div>
-        <Topbar />
+
 
 
         <div className="flex flex-col items-center min-h-[80vh]">
