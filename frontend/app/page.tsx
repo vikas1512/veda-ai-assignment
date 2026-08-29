@@ -168,12 +168,7 @@ export default function Home() {
 
       <div className="flex-1 p-4">
         <Topbar />
-        <div className="flex justify-center mt-4">
-  <div className="bg-orange-100 text-orange-600 px-4 py-2 rounded-full font-semibold">
-    Veda AI - Automated Answer Evaluation System
-  </div>
-</div>
-
+      
 
 
         <div className="flex flex-col items-center min-h-[80vh]">
